@@ -18,8 +18,8 @@ function testLocation() {
 ///////////////////////////////////////////////////////////////
 
 function getWeather() {
-    owmWeather.lat = owmGeocode.getLat();
-    owmWeather.lon = owmGeocode.getLon();
+    owmWeather.lat = lat;
+    owmWeather.lon = lon;
 
     owmWeather.request(displayWeather);
 }
@@ -33,8 +33,8 @@ function testWeather() {
 ///////////////////////////////////////////////////////////////
 
 function getForecast() {
-    owmForecast.lat = owmGeocode.getLat();
-    owmForecast.lon = owmGeocode.getLon();
+    owmForecast.lat = lat;
+    owmForecast.lon = lon;
 
     owmForecast.request(displayForecast);
 }

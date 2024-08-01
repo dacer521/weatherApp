@@ -4,39 +4,50 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Robbie &amp; Prof Loi</title>
+    <title>Weather</title>
     <link rel="stylesheet" href="weather.css">
+    <link rel="icon" sizes="16x16" href="./favicon.png">
 </head>
 <body>
     <div id="dev-controls">
-        <div class="controls">
-            <button onclick="getLocation()">LOAD LOCATION</button>
-            <button onclick="getWeather()">LOAD WEATHER</button>
-            <button onclick="getForecast()">LOAD FORECAST</button>
-            <button onclick="getPollution()">LOAD POLLUTION</button>
-        </div>
-        <div class="controls">
-            <input id="testnum" type="number" min="1" max="5" value="1">
-            <button onclick="testLocation()">TEST LOCATION</button>
-            <button onclick="testWeather()">TEST WEATHER</button>
-            <button onclick="testForecast()">TEST FORECAST</button>
-            <button onclick="testPollution()">TEST POLLUTION</button>
-        </div>
+
+        <div class="controls"> 
+            <input style = "display: none" id="testnum" type="number" min="1" max="5" value="1">
+            <button onclick="getWeather()"  id="TESTButton">WEATHER</button> 
+            <button onclick="getForecast()"  id="TESTButton">FORECAST</button> 
+        </div>  
+    </div>
+    <div id = "chatgpt">
+        <label for="prompt">Choose a question to ask ChatGPT</label>
+        <select name="prompt" id="prompt" onchange = "runGPT()">
+        <option disabled selected value> -- select an option -- </option>
+
+          <option value="wearToday">What Should I wear today?</option>
+          <option value="howIs">Describe the weather today</option>
+          <option value="special">Are there any special forms of weather today?</option>
+          <option value="rain">Will it rain/snow later today?</option>
+        </select>
+
+        <p id = "output"> </p>
     </div>
 
-    <p style="display: inline;">See examples.js to get started</p> <button style="display: inline;" onclick="load1()">LOAD FROM example.js</button>
+    <!-- <p style="display: inline;">See examples.js to get started</p> <button style="display: inline;" onclick="load1()">LOAD FROM example.js</button> -->
     
-    <h2 id="location">LOCATION</h2>
-    <p id="weather-report">WEATHER REPORT</p>
+    <br> <h2 id="location">LOCATION</h2> <br>
+    <input type="text" id="location-input" onchange="load1()">
+
+    <label for="location-input" id="label-location">Input location (Ex: Boston, MA)</label> <br> <br>
+    <p id="weather-report">WEATHER REPORT</p> <br>
     
     <table id="forecast-table"></table>
 
-    <p id="pollution-report">POLLUTION REPORT</p>
+
+   
     
     <script src="./OWMGeocode.js"></script>
     <script src="./OWMForecast.js"></script>
     <script src="./OWMWeather.js"></script>
-    <script src="./OWMPollution.js"></script>
+    
     
     <script src="./display.js"></script>
     <script src="./trigger.js"></script>

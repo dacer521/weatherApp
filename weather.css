@@ -1,31 +1,129 @@
-body {
-    background-color: #1f001f;
+html {
+    overflow-x: hidden;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
 }
 
-h2, p {
+body {
+    background-color: #1f001f;
+    color: white;
+    align-items: center;
+    text-align: center;
+    height: 2rem;
+}
+
+h2, p, #label-location{
     color: white;
     font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
 }
 
+#location-input, #weather-report-clothing{
+    margin-top: -2rem;
+}
+
+#label-location, #location-input {
+    display: none;
+}
+
+#location {
+    float: right;
+    text-align: center;
+    align-content: center;
+}
+a {
+    color: white;
+}
+div#chatgpt {
+    float: right;
+    height: 100%;
+    width: 35%;
+}
+table {
+    margin-left: auto;
+    margin-right: auto;
+}
+.table-div {
+    margin-left: auto;
+    margin-right: auto;
+    justify-self: center;
+    justify-content: center;
+}
+
+#testnum {
+    display: hidden;
+}
+
+.controls {
+    width: 200%;
+    align-items: center;
+    height: 2rem;
+    margin-right: auto;
+    margin-left: auto;
+    align-content: center;
+    text-align: center;
+    justify-content: center;
+}
+#output {
+    text-align: left;
+}
+#TESTButton {
+    float: left;
+    background-color: aquamarine;
+    margin: 1px;
+    border-radius: 1rem;
+    display: inline;
+    padding: 5px;
+    height: 2rem;
+    
+}
+
+#TESTButton a:hover{
+    background-color: black;
+}
+
 #dev-controls {
-    width: auto;
+    border-radius: 1rem;
+    width: 100%;
+    height: 2.1rem;
+    align-content: center;
+    text-align: center;
+    justify-content: center;
+    
     border-color: white;
     border-style: solid;
     background-color: rgba(127, 127, 127, 0.5);
 }
 
-.controls {
-    display: flex;
-    padding: 5px;
-}
-
 #forecast-table {
+    width: 50%;
     color: white;
     border-collapse: collapse;
+    align-items: center;
+    align-content: center;
+    justify-content: center;
 }
 
 #forecast-table tr td, #forecast-table tr th {
     border-style: solid;
+    align-items: center;
+    align-content: center;
+    height: 25%;
     border-color: white;
     text-align: center;
+    justify-content: center;
+}
+
+
+
+#chatgpt {
+    text-align: right;
+    top:0;
+    right: 0;
+}
+
+.hidden {
+    display: none;
+}
+
+.visible {
+    display: block;
 }
